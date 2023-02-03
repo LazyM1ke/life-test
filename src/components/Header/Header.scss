@@ -1,0 +1,35 @@
+@import "../../assets/styles/colors/colors";
+@import "../../assets/styles/mixins";
+
+
+.header {
+  @include flexible($fd: row, $ai: center, $jc: space-between);
+  padding: 8px 25px 10px 20px;
+
+  &__logo {
+    @include flexible($fd: row, $ai: center, $jc: space-between, $gap: 8px);
+
+    &-title {
+      font-size: 24px;
+      font-weight: 500;
+      color: $primary;
+    }
+  }
+  &__wrapper {
+    @include flexible($fd: column, $ai: center, $jc: space-between);
+  }
+  &__task {
+    @include flexible($fd: row, $ai: center, $jc: space-between, $gap: 4px);
+    &-title {
+      color: $gray-100;
+    }
+    &-icon {
+      color: $primary;
+    }
+
+    &-time {
+      @include flexible($fd: row, $ai: center, $jc: space-between, $gap: 4px);
+      color: $gray-80;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@mixin flexible($ai: flex-start, $jc: flex-start, $fd: row, $gap: 0) {
+
+  display: flex;
+  flex-direction: $fd;
+  align-items: $ai;
+  justify-content: $jc;
+
+  gap: $gap;
+
+  body:not(.flexbox-supports-gap) & {
+    @if $fd == row {
+      & > * + * {
+        margin-left: $gap;
+      }
+    }
+
+    @if $fd == column {
+      & > * + * {
+        margin-top: $gap;
+      }
+    }
+  }
+}
