@@ -1,6 +1,6 @@
 import './Header.scss'
 import Logo from '../../assets/images/logo.svg'
-import pauseIcon from '../../assets/icons/pause.svg'
+import { ReactComponent as PauseIcon } from '../../assets/icons/pause.svg'
 
 function Header() {
   return (
@@ -15,11 +15,7 @@ function Header() {
       <div className="header__wrapper">
         <div className="header__task">
           <p className="header__task-title">Сделать UI-kit</p>
-          <img
-            className="header__task-icon"
-            src={pauseIcon}
-            alt="pauseIcon"
-          />
+          <PauseIcon className="header__task-icon" />
         </div>
         <div className="header__task-time">
           <div>Сегодня: </div>

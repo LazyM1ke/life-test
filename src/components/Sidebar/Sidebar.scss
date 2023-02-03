@@ -1,1 +1,25 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/colors/colors";
 
+.sidebar {
+  @include flexible($fd: column, $ai: center, $gap: 8px);
+  background: $gray-20;
+  min-height: 100vh;
+  width: 268px;
+  padding: 24px 32px;
+
+  &__top {
+    @include flexible($fd: row, $ai: center, $jc: space-between, $gap: 14px);
+    width: 204px;
+    padding: 8px 16px;
+    input {
+      color: $gray-80;
+      background: transparent;
+    }
+  }
+
+  &__items {
+    @include flexible($fd: column, $ai: center, $jc: space-between, $gap: 8px);
+
+  }
+}

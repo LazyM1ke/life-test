@@ -1,0 +1,20 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/colors/colors";
+
+
+.folder {
+  @include flexible($fd: row, $ai: center, $jc: space-between);
+  padding: 8px 16px;
+  width: 204px;
+  background: $gray-0;
+  border-radius: 8px;
+
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    color: $gray-80;
+  }
+  &.active {
+    background: $success;
+  }
+}
