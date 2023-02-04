@@ -1,12 +1,12 @@
-import './App.css'
+import './App.scss'
 import Header from './components/Header/Header'
-import Sidebar from './components/Sidebar'
+import IndexPage from './pages/IndexPage'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Header />
-      <Sidebar />
+      <IndexPage />
     </div>
   )
 }

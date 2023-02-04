@@ -1,7 +1,7 @@
 import './Folder.scss'
 import FeatherIcon from 'feather-icons-react'
 
-function Folder({ activeFolder }) {
+function Folder() {
   return (
     <div className="folder">
       <div className="folder__title">Задачи Дениса</div>

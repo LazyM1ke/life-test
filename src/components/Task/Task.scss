@@ -1,0 +1,25 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/colors/colors";
+
+.task {
+  @include flexible($fd: row, $ai: center, $jc: space-between);
+  width: 100%;
+  padding: 11px 8px;
+  border-radius: 8px;
+
+  &__title {
+    @include flexible($fd: row, $ai: center, $gap: 12px);
+    font-weight: 400;
+    font-size: 16px;
+    color: $gray-100;
+    input{
+      width: 16px;
+      height: 16px;
+    }
+  }
+  &__time {
+    font-weight: 400;
+    font-size: 16px;
+    color: $gray-80;
+  }
+}

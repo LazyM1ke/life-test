@@ -4,7 +4,7 @@
 .sidebar {
   @include flexible($fd: column, $ai: center, $gap: 8px);
   background: $gray-20;
-  min-height: 100vh;
+  height: 100vh;
   width: 268px;
   padding: 24px 32px;
 
