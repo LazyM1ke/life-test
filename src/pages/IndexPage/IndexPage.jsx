@@ -2,6 +2,7 @@ import './IndexPage.scss'
 import Sidebar from '../../components/Sidebar'
 import FeatherIcon from 'feather-icons-react'
 import Task from '../../components/Task'
+import TaskBar from '../../components/TaskBar'
 
 function IndexPage() {
   return (
@@ -37,6 +38,7 @@ function IndexPage() {
         <Task />
         <Task />
       </div>
+      <TaskBar />
     </div>
   )
 }

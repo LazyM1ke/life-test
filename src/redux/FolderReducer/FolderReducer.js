@@ -12,7 +12,6 @@ export const folderSlice = createSlice({
       state.activeId = action.payload
     },
     deleteFolder: (state, action) => {
-      // state.folders.filter((folder) => folder.id !== action.payload)
       const index = state.folders.findIndex((folder) => folder.id === action.payload)
       state.folders.splice(index, 1)
     },

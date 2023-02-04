@@ -1,0 +1,65 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/colors/colors";
+
+.task-bar {
+  padding: 24px 16px;
+  border-left: 1px solid $gray-40;
+
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: $gray-100;
+  }
+  &__folder {
+    margin-top: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: $gray-80;
+  }
+
+  &__time {
+    @include flexible($fd: row, $jc: space-between, $ai: center);
+    margin-top: 24px;
+
+    &-item {
+      @include flexible($fd: column, $ai: center, $gap: 2px);
+      & span {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: $gray-100;
+      }
+    }
+    &-title {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $gray-80;
+    }
+  }
+
+  &__tools {
+    @include flexible($fd: column );
+    margin-top: 35px;
+
+    &-item {
+      @include flexible($fd: row, $ai: center, $gap: 6px);
+      padding: 8px 0;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: $primary;
+      & input {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &-delete {
+      color: $error;
+    }
+
+  }
+
+}
