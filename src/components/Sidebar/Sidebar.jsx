@@ -4,13 +4,13 @@ import Folder from '../Folder/Folder'
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { folderSlice } from '../../redux/FolderReducer/FolderReducer'
+import uuid from 'react-uuid'
 
 function Sidebar() {
   const dispatch = useDispatch()
   const { addFolder } = folderSlice.actions
   const [inputValue, setInputValue] = useState('Добавить папку')
   const [inputOpened, setInputOpened] = useState(false)
-  // const folders = [1, 2, 3, 4]
   const { folders } = useSelector((state) => state.FolderReducer)
 
   const inputRef = useRef(null)
@@ -28,9 +28,9 @@ function Sidebar() {
     e.preventDefault()
     dispatch(
       addFolder({
+        id: uuid(),
         name: inputValue,
         tasks: [],
-        active: false,
       }),
     )
     setInputOpened(false)
@@ -52,6 +52,7 @@ function Sidebar() {
                 onChange={(e) => setInputValue(e.target.value)}
                 value={inputValue}
                 ref={inputRef}
+                maxLength="32"
               />
             </form>
           </div>
@@ -60,9 +61,10 @@ function Sidebar() {
         )}
       </div>
       <div className="sidebar__items">
-        {folders.map((item, index) => (
+        {folders.map((item) => (
           <Folder
-            key={index}
+            id={item.id}
+            key={item.id}
             folderName={item.name}
           />
         ))}
@@ -71,10 +73,4 @@ function Sidebar() {
   )
 }
 
-//
-// {inputOpened ? (
-//   <input type="text" />
-// ) : (
-//   <div onClick={() => setInputOpened(true)}>{folderName}</div>
-// )}
 export default Sidebar
