@@ -9,12 +9,22 @@
   padding: 24px 32px;
 
   &__top {
-    @include flexible($fd: row, $ai: center, $jc: space-between, $gap: 14px);
+    @include flexible($fd: row, $ai: center, $gap: 7px);
     width: 204px;
     padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: $gray-80;
     input {
       color: $gray-80;
       background: transparent;
+      width: 125px;
+
+    }
+    &-input {
+      @include flexible($fd: row, $ai: center, $jc: space-between);
     }
   }
 
