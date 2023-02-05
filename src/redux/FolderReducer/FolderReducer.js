@@ -8,8 +8,11 @@ export const folderSlice = createSlice({
     addFolder: (state, action) => {
       state.folders.push(action.payload)
     },
-    setActiveFolder: (state, action) => {
-      state.activeId = action.payload
+    setActiveFolderId: (state, action) => {
+      state.activeFolderId = action.payload
+    },
+    setActiveFolderName: (state, action) => {
+      state.activeFolderName = action.payload
     },
     deleteFolder: (state, action) => {
       const index = state.folders.findIndex((folder) => folder.id === action.payload)

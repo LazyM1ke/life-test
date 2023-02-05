@@ -1,6 +1,7 @@
 const initialState = {
   folders: [],
-  activeId: null,
+  activeFolderId: 'main',
+  activeFolderName: 'Основные задачи',
 }
 
 export default initialState

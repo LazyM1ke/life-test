@@ -1,6 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit'
 
-const FoldersSelector = (state) => state.folders
-const getFolderName = createSelector(FoldersSelector, (folder) => folder.name)
+const FolderSelector = (state) => state.folders
+const getFolderTasks = createSelector(FolderSelector, (folder) => folder.tasks)
 
-export { FoldersSelector, getFolderName }
+export default FolderSelector
+export { FoldersSelector, getFolderTasks }

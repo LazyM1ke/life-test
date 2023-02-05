@@ -31,6 +31,7 @@ function Sidebar() {
         id: uuid(),
         name: inputValue,
         tasks: [],
+        isActive: false,
       }),
     )
     setInputOpened(false)
@@ -61,6 +62,14 @@ function Sidebar() {
         )}
       </div>
       <div className="sidebar__items">
+        <Folder
+          folderName={'Основные задачи'}
+          id={'main'}
+        />
+        <Folder
+          folderName={'Архив'}
+          id={'archive'}
+        />
         {folders.map((item) => (
           <Folder
             id={item.id}
