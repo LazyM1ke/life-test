@@ -6,6 +6,12 @@
   width: 100%;
   padding: 11px 8px;
   border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $gray-20;
+    transition: background-color .2s ease-out;
+  }
 
   &__title {
     @include flexible($fd: row, $ai: center, $gap: 12px);

@@ -81,8 +81,10 @@ function MainSection() {
       </div>
       {filteredTasks.map((task) => (
         <Task
+          key={uuid()}
           taskName={task.name}
           taskTotalTime={task.total_time}
+          taskId={task.id}
           activeFolderId={activeFolderId}
         />
       ))}

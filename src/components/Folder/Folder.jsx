@@ -10,7 +10,6 @@ function Folder({ folderName, id }) {
   const { activeFolderId } = useSelector((state) => state.FolderReducer)
   const { setActiveFolderId, deleteFolder, setActiveFolderName } = folderSlice.actions
   const { updateTasks } = taskSlice.actions
-  const { tasks } = useSelector((state) => state.TaskReducer)
   const [hover, setHover] = useState(false)
 
   const handleOnClick = () => {
@@ -20,9 +19,8 @@ function Folder({ folderName, id }) {
 
   const onDeleteFolder = (e) => {
     e.stopPropagation()
-    const filteredTasks = tasks.filter((task) => task.folderId === id)
     dispatch(deleteFolder(id))
-    dispatch(updateTasks(filteredTasks))
+    dispatch(updateTasks(id))
     dispatch(setActiveFolderId('main'))
     dispatch(setActiveFolderName('Основные задачи'))
   }

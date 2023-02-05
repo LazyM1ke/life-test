@@ -2,11 +2,14 @@ import './TaskBar.scss'
 import { ReactComponent as PauseIcon } from '../../assets/icons/pause.svg'
 import { ReactComponent as ArchiveIcon } from '../../assets/icons/archive.svg'
 import { ReactComponent as TrashIcon } from '../../assets/icons/trash.svg'
+import { useSelector } from 'react-redux'
 
 function TaskBar() {
+  const { activeTaskName } = useSelector((state) => state.TaskReducer)
+
   return (
     <div className="task-bar">
-      <div className="task-bar__title">Добавить задачу</div>
+      <div className="task-bar__title">{activeTaskName}</div>
       <div className="task-bar__folder">Основные задачи</div>
       <div className="task-bar__time">
         <div className="task-bar__time-item">

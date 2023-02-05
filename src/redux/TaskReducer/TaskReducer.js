@@ -13,7 +13,17 @@ export const taskSlice = createSlice({
       state.tasks.splice(index, 1)
     },
     updateTasks: (state, action) => {
-      state.tasks = state.tasks.filter((task) => task.folderId === action.payload)
+      const index = state.tasks.findIndex((task) => task.folderId === action.payload)
+      state.tasks.splice(index, 1)
+    },
+    setActiveTaskId: (state, action) => {
+      state.activeTaskId = action.payload
+    },
+    setActiveTaskName: (state, action) => {
+      state.activeTaskName = action.payload
+    },
+    setTaskStatus(state, action) {
+      state.tasks[action.payload].isDone = !state.tasks[action.payload].isDone
     },
   },
 })
